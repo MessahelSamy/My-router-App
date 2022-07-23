@@ -1,38 +1,134 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap");
+
+body {
+  background-image: url(./Components/961.jpg);
+  background-size: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* From uiverse.io by @satyamchaudharydev */
+/* === removing default button style ===*/
+.button {
+  margin: 0;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.uiverse {
   display: flex;
-  flex-direction: column;
+}
+/* button styling */
+.button {
+  --border-right: 4px;
+  --text-stroke-color: "" "#0192c6" "";
+  --animation-color: #244553; /*#0004ff*/
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Bowlby One SC", cursive;
+  position: relative;
+
+  /*text-transform: uppercase;#dcefff*/
+  color: #ffffff;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 25px #84deff);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
+
+  /*
+  background: #0f2027;
+  background: -webkit-linear-gradient(to bottom, #0f2027, #203a43);
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+*/
+}
+.h-1 {
+  /*font-family: "Kdam Thmor Pro", sans-serif;*/
+  font-family: "Rubik Moonrocks", cursive;
+  font-size: 70px;
+  /*color: #f15412;#dcefff*/
+  color: #dcefff;
+  margin-top: 0px;
+  font-weight: 100;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+a {
+  text-decoration: none;
+  height: auto;
+}
+.list {
+  list-style: none; /*Removes the default bullet points that an unordered list has. */
+  /*text-align: center; Aligning the text to the center is not important. It all depends on the look you're going for. */
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+}
+.list li {
+  padding: 15px;
+}
+.link {
+  font-family: "Righteous", cursive;
+  font-size: 25px;
+  display: inline-block; /*By default, anchor tags will be display of inline. We change this behavior to inline-block so that i will allow for the use of margin top and bottom.*/
+  margin-block: 2px; /*Short hand property for margin top and bottom. Creates 2px os separation on the top and bottom of the element. */
+  text-decoration: none; /*Gets rid of the underline that anchor tags have by default.*/
+  position: relative; /*Relative positioning is required for the pseudo-element we will create since it will have position of absolute. */
 }
 
-.App-link {
-  color: #61dafb;
+.link::after {
+  content: ""; /*Content property must be set else this element will not show up on the page. */
+  width: 100%;
+  height: 2px;
+  background: rgb(255, 255, 255); /*https://cssgradient.io/*/
+  background: linear-gradient(103deg, #ffffff 15%, #1d6683 75%);
+  border-radius: 10px; /*Applies roundness to the bar. */
+  position: absolute; /*Allows for this element to be moved freely within the parent box that has the position of relative. */
+  left: 0; /*Starting left position will be 0. */
+  bottom: 0; /*Starting bottom position will be 0 since we want to place this element under the link text. */
+  transform: scaleX(
+    0
+  ); /*We scale the width of this element on the X axis to 0 because we do not want to see it until hovered. */
+  transform-origin: left; /*By default, transform origin is the center, meaning the bar would grow from the center if we don't change this. We set it to the left so that it grows from the left instead. */
+  transition: transform 0.4s ease; /*Since we want to animate the transform property that is what we apply the transition to. */
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.link:hover::after {
+  transform: scaleX(
+    1
+  ); /*When the link is hovered, we target the pseudo-element and turn the scaleX back to 1. This will make it grow back to the initial width of 100%. */
+}
+.list li a {
+  transition: 0.8s;
+  color: #ffffff /*#dcefff #01b7f8
+  #2c5364
+  
+  #0192c6*/;
+}
+.list li a:hover {
+  color: #244553;
 }

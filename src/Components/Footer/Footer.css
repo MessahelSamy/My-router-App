@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
+
+* {
+  padding: 0;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /**/
+  background: #0f2027;
+  background: -webkit-linear-gradient(to bottom, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(to bottom, #2c5364, #203a43, #0f2027);
+}
+.ul-footer {
+  display: flex;
+  flex-direction: row;
+}
+.list-footer {
+  background: radial-gradient(circle, #2c5364 33%, #0f2027 100%);
+  list-style: none;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.a-footer {
+  font-size: 22px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  color: #000000;
+}
+svg.icon-footer {
+  margin-top: 15px;
+  width: 60px;
+  color: #dcefff;
+}
+/*p {
+  bottom: 0;
+  position: static;
+  line-height: 50px;
+  margin-left: 36px;
+  color: #dcefff;
+  font-size: 15px;
+}
+.privacy-terms {
+  bottom: 0;
+  position: static;
+  list-style: none;
+  display: flex;
+  line-height: 50px;
+  margin-left: 1010px;
+}
+ul li a {
+  font-size: 16px;
+  color: #ffe65c;
+}
+<div>
+        <p>Copyright © MESSAHEL SAMY SALAHEDDINE 2022</p>
+      </div>
+      <ul className="privacy-terms">
+        <li>
+          <a
+            rel="noreferrer"
+            href="https://www.instagram.com/samy_messahel/?hl=fr"
+            target="_blank"
+          >
+            Privacy Policy
+          </a>
+        </li>
+
+        <li>
+          <a
+            rel="noreferrer"
+            href="https://www.instagram.com/samy_messahel/?hl=fr"
+            target="_blank"
+          >
+            Terms of Use
+          </a>
+        </li>
+      </ul>
+*/
